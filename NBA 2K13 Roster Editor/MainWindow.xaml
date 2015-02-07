@@ -247,6 +247,45 @@
                     	Width="102" Height="22" VerticalAlignment="Top" Click="btnFixWaivedRFAs_Click" />
                 </Grid>
             </TabItem>
+                        </TabItem>
+            <TabItem x:Name="tabPlayers" Header="Hall of Fame">
+                <Grid x:Name="grdPlayers">
+                    <DataGrid x:Name="dgPlayers" CanUserAddRows="False" CanUserDeleteRows="False" FrozenColumnCount="2"
+                              Margin="10,10,128,21" AutoGenerateColumns="False" EnableColumnVirtualization="True"
+                              EnableRowVirtualization="True"
+                              PreviewKeyDown="dgPlayers_PreviewKeyDown" ClipboardCopyMode="IncludeHeader"
+                              SelectionUnit="Cell"
+                              MouseDoubleClick="dgPlayers_MouseDoubleClick"
+                              SelectedCellsChanged="dgPlayers_SelectedCellsChanged"
+                              CellEditEnding="dataGrid_CellEditEnding"
+                              AlternatingRowBackground="#FFE5E5E5"
+                              d:DataContext="{d:DesignInstance players:PlayerEntry}">
+                        <DataGrid.ColumnHeaderStyle>
+                            <Style TargetType="Control">
+                                <Setter Property="FontFamily" Value="Arial Narrow"/>
+                                <Setter Property="FontSize" Value="12"/>
+                            </Style>
+                        </DataGrid.ColumnHeaderStyle>
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Header="ID" Binding="{Binding ID, Mode=TwoWay}" />
+                            <DataGridTextColumn Header="Name" Binding="{Binding Name, Mode=TwoWay}" />
+                            <DataGridTextColumn Header="PortraitID" Binding="{Binding Name, Mode=TwoWay} />
+			    <DataGridTextColumn Header="YearRet" Binding="{Binding YearRet, Mode=TwoWay}" />
+                            <DataGridTextColumn Header="Points" Binding="{Binding Points, Mode=TwoWay}" />
+                            <DataGridCheckBoxColumn Header="Rebounds" Binding="{Binding Rebounds, Mode=TwoWay}" />
+                            <DataGridTextColumn Header="Blocks" Binding="{Binding Blocks, Mode=TwoWay}" />
+                            <DataGridTextColumn Header="Assists" Binding="{Binding Assists, Mode=TwoWay}" />
+                            <DataGridTextColumn Header="Steals" Binding="{Binding Steals, Mode=TwoWay}" />
+                            <DataGridTextColumn Header="Games" Binding="{Binding Games, Mode=TwoWay}" />
+                            <DataGridTextColumn Header="NBAChamp" Binding="{Binding NBAChamp, Mode=TwoWay}"
+                            <DataGridCheckBoxColumn Header="NBA_MVP" Binding="{Binding NBA_MVP, Mode=TwoWay}" />
+                            <DataGridCheckBoxColumn Header="NBA_FnMVP" Binding="{Binding NBA_FnMVP, Mode=TwoWay}" />
+                            <DataGridCheckBoxColumn Header="AllStarNum" Binding="{Binding AllStarNum, Mode=TwoWay}" />
+                            <DataGridTextColumn Header="DefPlayer" Binding="{Binding DefPlayer, Mode=TwoWay}" />
+                            <DataGridTextColumn Header="SixMan" Binding="{Binding SixMan, Mode=TwoWay}" />
+                            <DataGridTextColumn Header="RookieOfY" Binding="{Binding RookieOfY, Mode=TwoWay}" />
+                </Grid>
+            </TabItem>
             <TabItem Header="Teams">
                 <Grid>
                     <Button x:Name="btnSaveTeams" Content="Save Teams" Margin="0,10,10,0" HorizontalAlignment="Right"
